@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather Django - By Reis567</title>
 </head>
 <body>
-    
+    <form action="" method='post'>
+        {% csrf_token %}
+        <input type="text" name="city1" placeholder="Maricá or Rio de janeiro or Niterói and etc...">
+        <input type="text" name="city2" placeholder="Other city like Rio de janeiro or Niterói or Magé and etc...">
+        <button type="submit">Procurar</button>
+    </form>
 </body>
 </html>

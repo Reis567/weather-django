@@ -30,6 +30,8 @@
             <img src="http://openweathermap.org/img/w/{{forecast.icon}}.png" alt="weather_data.description">
         </div>
     {% endfor %}
+    {% else %}
+    <p>No daily forecasts available.</p>
 </div>
 
 {% endif %}

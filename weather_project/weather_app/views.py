@@ -14,28 +14,31 @@ def index(request):
 
         weather_data1, daily_forecasts1 = fetch_weather_and_forecast(city1, API_KEY, current_weather_url, forecast_url)
 
+
         if city2:
             weather_data2,daily_forecasts2 = fetch_weather_and_forecast(city2, API_KEY,current_weather_url,forecast_url)
         else:
             weather_data2,daily_forecasts2 = None,None
 
         context = {
-            'weather_data1': weather_data1,
-            'daily_forecasts1': daily_forecasts1,
-            'weather_data2': weather_data2,
-            'daily_forecasts2': daily_forecasts2,
-        }
-        return render(request,'weather_app/index.html',context)
+        'weather_data1': weather_data1,
+        'daily_forecasts1': daily_forecasts1,
+        'weather_data2': weather_data2,
+        'daily_forecasts2': daily_forecasts2,
+    }
+        return render(request, 'weather_app/index.html', context)
+
     else:
         return render(request,'weather_app/index.html')
     
 
 def fetch_weather_and_forecast(city, api_key, current_weather_url, forecast_url):
     response = requests.get(current_weather_url.format(city, api_key)).json()
-    lat = response['coord']['lat']
-    lon = response['coord']['lon']
+    lat = response['coord']["lat"]
+    lon = response['coord']["lon"]
 
     forecast_response = requests.get(forecast_url.format(lat, lon, api_key)).json()
+    print("Forecast Response:", forecast_response)
 
     weather_data = {
         "city": city,

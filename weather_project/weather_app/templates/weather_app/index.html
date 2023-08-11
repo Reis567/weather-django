@@ -10,30 +10,37 @@
 <body>
     <form action="" method='post'>
         {% csrf_token %}
-        <input type="text" name="city1" placeholder="Maricá or Rio de janeiro or Niterói and etc...">
-        <input type="text" name="city2" placeholder="Other city like Rio de janeiro or Niterói or Magé and etc...">
-        
+        <div class="label1">
+            <label for="">Primeira cidade :</label>
+            <input type="text" name="city1" placeholder="Maricá or Rio de janeiro or Niterói and etc...">
+        </div>
+
+        <div class="label2">
+            <label for="">Segunda cidade :</label>
+            <input type="text" name="city2" placeholder="Other city like Rio de janeiro or Niterói or Magé and etc...">
+        </div>
         <button type="submit">Procurar</button>
     </form>
 
-    <div class="comparisson-container">
-        {% if weather_data1 %}
-     
-            <div class="city-container">
-                {% include 'weather_app/city_weather.html' with weather_data=weather_data1 daily_forecasts=daily_forecasts1 %}
-            </div>
+    <div class="weather-row">
+        <div class="comparisson-container">
+            {% if weather_data1 %}
+        
+                <div class="city-container">
+                    {% include 'weather_app/city_weather.html' with weather_data=weather_data1 daily_forecasts=daily_forecasts1 %}
+                </div>
 
-        {% endif %}
+            {% endif %}
 
-        {% if weather_data2 %}
-     
-            <div class="city-container">
-                {% include 'weather_app/city_weather.html' with weather_data=weather_data2 daily_forecasts=daily_forecasts2 %}
-            </div>
+            {% if weather_data2 %}
+        
+                <div class="city-container">
+                    {% include 'weather_app/city_weather.html' with weather_data=weather_data2 daily_forecasts=daily_forecasts2 %}
+                </div>
 
-        {% endif %}
-    </div>
-    
+            {% endif %}
+        </div>
+</div>
 
 </body>
 </html>

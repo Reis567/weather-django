@@ -3,10 +3,20 @@ body {
     background-color: #f2f2f2;
     text-align: center;
     padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
   }
+
   
   form {
     margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
   }
   
   input[type="text"] {
@@ -39,6 +49,36 @@ body {
     width: calc(100% / 5 - 20px);
     box-sizing: border-box;
   }
+  .weather-row{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .weather-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .comparisson-container{
+    display: flex;
+    justify-content: center;
+  }
+  .city-container {
+    max-width: 300px;
+    margin: 0 auto; /* Adiciona esta linha para centralizar horizontalmente */
+    text-align: center; /* Adiciona esta linha para centralizar o conteúdo interno */
+    padding: 20px;
+}
+  
+
+.warning-p{
+  font-size: 15px;
+  color: red;
+}
   
   @media (max-width: 767px) {
     .forecast {

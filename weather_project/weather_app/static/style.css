@@ -1,9 +1,11 @@
 :root {
   --background-color1: #90b2ed;
   --background-color2: #3e5a89;
+  --background-color3: #2b3f61;
   --text-color1: #90b2ed;
   --text-color2: #3e5a89;
   --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  --box-shadow2: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -34,16 +36,29 @@ input[type="text"] {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+.label1{
+  padding-bottom: 5px;
+}
+.label2{
+  padding-bottom: 5px;
+}
 
 button {
   background-color: var(--background-color1);
   color: var(--text-color2);
   padding: 5px 10px;
+  font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 15px;
   box-shadow: var(--box-shadow);
+}
+button:hover{
+  background-color: var(--background-color3);
+  color: var(--text-color1);
+  transition: .5s;
+  box-shadow: var(--box-shadow2);
 }
 
 .forecast-container {
@@ -86,11 +101,18 @@ button {
   margin: 0 auto;
   text-align: center;
   padding: 20px;
+  margin: 50px;
+  border-radius: 10px;
+  background-color: var(--background-color2);
+  color: var(--text-color1);
+}
+.city-container h1{
+  font-weight: bold;
+  color: white;
 }
 
 .warning-p {
   font-size: 15px;
-  color: red;
 }
 
 @media (max-width: 767px) {

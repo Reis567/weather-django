@@ -5,21 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Weather Django - By Reis567</title>
 </head>
 <body>
+    <h1>Previsão do tempo com Django</h1>
     <form action="" method='post'>
+        
         {% csrf_token %}
         <div class="label1">
             <label for="">Primeira cidade :</label>
-            <input type="text" name="city1" placeholder="Maricá or Rio de janeiro or Niterói and etc...">
+            <input type="text" name="city1" placeholder="Some city name...">
         </div>
 
         <div class="label2">
             <label for="">Segunda cidade :</label>
-            <input type="text" name="city2" placeholder="Other city like Rio de janeiro or Niterói or Magé and etc...">
+            <input type="text" name="city2" placeholder="Other city like Maricá...">
         </div>
-        <button type="submit">Procurar</button>
+        <button type="submit"> <i class="fa-solid fa-magnifying-glass"></i> Procurar</button>
     </form>
 
     <div class="weather-row">
